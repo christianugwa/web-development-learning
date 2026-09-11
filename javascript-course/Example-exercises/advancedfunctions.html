@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>App</title>
+  </head>
+
+
+  <body>
+    
+    <button class="add-button" onclick="
+      messages++;
+      displayNotification();
+      " >Add</button>
+
+    <button class="remove-button" onclick="
+      if (messages > 0) {
+        messages--;
+      }
+
+      if (messages === 0) {
+        stopNotification();
+      }
+      " >Remove</button>
+
+    <script>
+
+      /*const add = function() {
+        console.log (2 + 3);
+      }
+
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(function () {
+        console.log('12b')
+      });
+
+      runTwice(add);*/
+
+    /*function change () {
+      let buttonChange = document.querySelector('.start-button')
+        
+      buttonChange.innerHTML = 'Loading...'
+      setTimeout(function() {
+      buttonChange.innerHTML = "Finished!"
+      }, 1000)
+    }*/
+
+    /*let timeoutId;
+
+    function change() {
+      let inputText = document.querySelector('.js-input');
+
+      inputText.textContent = 'Added';
+
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(function() {
+      inputText.textContent = ''
+      }, 2000);
+    }*/
+    
+    
+    /*function change(value) {
+      messages += value;
+    }
+
+    let messages = 3;
+
+    let intervalId;
+
+    let isDisplayingNotification;
+
+    displayNotification();
+
+    function displayNotification() {
+      if (isDisplayingNotification) {
+        return;
+      }
+
+      isDisplayingNotification = true;
+
+      intervalId = setInterval(function() {
+        if (document.title === 'App') {
+          document.title = `(${messages}) new messages`
+        } else {
+          document.title = 'App'
+        }
+      }, 1000);
+    }
+
+    function stopNotification() {
+      isDisplayingNotification = false;
+
+      clearInterval(intervalId);
+      document.title = 'App';
+    }*/
+
+    /*const multiply = (a , b) => a * b;
+    
+
+    console.log(multiply(3 , 6));
+    console.log(multiply(7 , 10));*/
+
+    /*function countPositive(nums) {
+      let totalIndex = 0;
+
+      nums.forEach((value , index )=> {
+        if (value > 0) {
+          totalIndex++
+        } else {
+          return;
+        }
+      })
+
+      console.log(totalIndex);
+    }
+
+    countPositive([1 , -3 , 5]);
+    countPositive([-2 , 3 , -5 , 7 , 10]);*/ 
+
+    /*function addNum (array , num) {
+     return array.map(value => value + num );
+    }
+
+    console.log(addNum([1 , 2 , 3] , 2));
+    console.log(addNum([-2 , -1 , 0 , 99] , 2));*/ 
+
+    function removeEgg(foods) {
+      return foods.filter ((value , index ) => {
+        if (value === 'egg' && index < 3 ) {
+          return false 
+        } else {return true}
+      })
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg' ,'ham']));
+    
+
+
+    </script>
+
+  </body>
+
+</html>

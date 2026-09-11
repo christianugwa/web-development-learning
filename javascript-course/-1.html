@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://127.0.0.1:5500/javascript-course/10-DOM-Projects.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DOM projects</title>
+
+    <style>
+
+       body {
+        font-family: arial;
+      }
+
+
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px 10px;
+      }
+
+      .calculate-button{
+        background-color: green;
+        padding: 12px 15px;
+        color: white;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .error {
+        color: red;
+      }
+     
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <p>Youtube Subscribe button</p>
+
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button subscribe-button">
+      Subscribe
+    </button>
+
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input type="text" placeholder="Cost of Order" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event)">
+    
+
+    <button onclick="calculateTotal()" class="calculate-button">
+      Calculate
+    </button>
+
+    <p class="js-total-cost">$9</p>
+
+   
+    
+
+    <script>
+      function handleCostKeydown (event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal () {
+       const inputElement = document.querySelector('.js-cost-input');
+
+       let cost = Number(inputElement.value);
+
+       const totalParagraph = document.querySelector('.js-total-cost')       
+
+       if (cost > 0) {
+         totalParagraph.innerHTML = 'Error: cost cannot be less than $0';
+         totalParagraph.classList.add('error');
+       } else if (cost < 40) {
+        cost += 10;}
+
+       totalParagraph.innerHTML = `$${cost}`;
+
+      }
+
+
+
+
+      function subscribe () {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe' ) {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+           buttonElement.classList.remove('is-subscribed');
+        }
+      }
+
+    
+    </script>
+
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

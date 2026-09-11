@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      body {
+        height: 3000px;
+        background-color: black;
+      }
+
+      div {
+        font-family: Arial;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        align-items: middle;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background-color: white;
+
+      }
+
+      img {
+        width: 30px;
+        border-radius: 15px;
+      }
+
+      .image-container {
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+
+      .button-side {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 40px;
+      }
+
+      .images-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 50px;
+      }
+
+      .text {
+        font-weight: bold;
+      }
+
+      .add-friend-button {
+        background-color: rgb(41, 41, 224);
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .message-button {
+        background-color: rgb(224, 224, 224);
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: black;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .message-button-container {
+        margin-left: 5px;
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+
+      <div class="images-text">
+
+       <div class="image-container">
+        <img src="images/Dog 1.webp" alt="">
+       </div> 
+
+        <div class="text">Oliver Cat</div>
+
+
+      </div>
+
+      <div class="button-side">
+
+        <div class="Add-friend-container">
+          <button class="add-friend-button">Add Friend</button>
+        </div>
+
+        <div class="message-button-container">
+          <button class="message-button">Message</button>
+        </div>
+
+
+      </div>
+
+
+    </div>
+   
+    
+
+  </body>
+</html>

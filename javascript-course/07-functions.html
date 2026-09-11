@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Functions</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+      function function1 () {
+        console.log ('Hello');
+        console.log (2 + 2);
+      }
+
+      function1 ();
+      */
+
+      function calculateTax (cost, taxPercent = 0.1) {
+        console.log (cost * taxPercent);
+      }
+
+      calculateTax(2000, 0.2);
+      calculateTax(5000);
+
+      function convertUSDToNGN (dollar) {
+      return dollar * 1500;
+     }
+
+     function convertPoundToNGN (pound) {
+      return pound * 1900;
+     }
+
+     function calculateFinalPrice (price, currency, taxRate = 0.1) {
+      let convertedPrice;
+
+      if (currency === 'dollar') {
+        convertedPrice = convertUSDToNGN (price);
+      } else if (currency === 'pound') {
+        convertedPrice = convertPoundToNGN (price);
+      } else {
+        convertedPrice = price;
+      }
+
+       const totalPrice = convertedPrice + (convertedPrice * taxRate);
+
+      return `Total: ${totalPrice} NGN`;
+     }
+     
+
+     console.log (calculateFinalPrice(25, 'pound'));
+     console.log (calculateFinalPrice(15, 'dollar'));
+     console.log (calculateFinalPrice (5000, 'naira'));
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

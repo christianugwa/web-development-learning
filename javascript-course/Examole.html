@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+  </head>
+
+  <body>
+
+    <button onclick="
+      playGame('Heads')
+    ">Heads</button>
+
+    <button onclick=
+    "playGame('Tails')
+    ">Tails</button>
+
+
+
+    <script>
+
+      const score = JSON.parse(localStorage.getItem('score')) ||  {
+        wins: 0,
+        losses: 0
+      }
+
+
+      function playGame(guess) {
+
+        let computerMove = playComputerMove();
+
+        let result = '';
+
+        if (guess === computerMove) {
+          result = 'You win';
+          score.wins += 1;
+        } else {
+          result = 'You lose';
+          score.losses += 1;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        alert(`You picked ${guess} , Computer picked ${computerMove}. ${result}.
+         Wins: ${score.wins}, Losses: ${score.losses}`);
+
+      }
+
+      function playComputerMove () {
+        let computer = Math.random()
+
+        if (computer > 0.5) {
+          return 'Tails'
+        } else return 'Heads'
+      }
+      
+
+
+      
+
+    </script>
+  </body>
+
+
+
+
+
+
+
+
+</html>

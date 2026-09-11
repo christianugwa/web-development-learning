@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      .is-toggled {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+      }
+
+      .isnot-toggled {
+        background-color: rgb(240, 240, 240);
+        color: black;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    
+    <button class="js-button is-toggled" onclick="toggleButton('this')">
+      Gaming
+    </button>
+
+    <button class="js-button is-toggled" onclick="toggleButton('this')">
+      Music
+    </button>
+
+    <button class="js-button is-toggled" onclick="toggleButton('this')">
+      Tech
+    </button>
+
+
+    <script>
+      function toggleButton (select) {
+        let toggle = document.querySelector('.js-button');
+        if (toggle.classList.contains('is-toggled')) {
+          toggle.classList.remove('is-toggled');
+          toggle.classList.add('isnot-toggled');
+        } else if (toggle.classList.contains('isnot-toggled')) {
+          toggle.classList.remove('isnot-toggled');
+          toggle.classList.add('is-toggled');
+        }
+      }
+    </script>
+
+  </body>
+</html>

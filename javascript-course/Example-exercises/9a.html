@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <style>
+      button {
+        padding: 10px 15px;
+        border: none;
+        color: white;
+        background-color: black;
+      }
+
+      .is-toggled {
+        background-color: grey;
+        color: black;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <button class="js-button" onclick="toggleButton(this)">
+      Gaming
+    </button>
+
+    <button  class="js-button" onclick="toggleButton(this)">
+      Music
+    </button>
+
+    <button class="js-button" onclick="toggleButton(this)">
+      Tech
+    </button>
+    
+    <script>      
+      function toggleButton(myCall) {
+       let allButtons = document.querySelectorAll('.js-button');
+
+       allButtons.forEach(function(btn) {
+
+        btn.classList.remove('is-toggled')
+       });
+
+       myCall.classList.add('is-toggled');
+
+      }
+ 
+
+    </script>
+
+  </body>
+</html>

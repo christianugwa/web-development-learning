@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prime Cuts Barbershop</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#111;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    header{
+      background:#000;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#d4af37;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#d4af37;
+    }
+
+    .hero{
+      height:90vh;
+      background:url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1600&auto=format&fit=crop')
+      center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      background:rgba(0,0,0,0.7);
+      padding:40px;
+      border-radius:10px;
+      max-width:700px;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#d4af37;
+      color:#000;
+      padding:14px 28px;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:5px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#fff;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:40px;
+      color:#d4af37;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#1a1a1a;
+      padding:30px;
+      border-radius:10px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#d4af37;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:10px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:10px 0;
+      font-size:18px;
+    }
+
+    footer{
+      background:#000;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:40px;
+      }
+
+      nav{
+        display:none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Prime Cuts</div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fresh Cuts. Clean Style.</h1>
+      <p>Premium barber services for modern gentlemen.</p>
+      <a href="#contact" class="btn">Book Appointment</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+      <div class="card">
+        <h3>Haircut</h3>
+        <p>Classic and modern cuts tailored to your style.</p>
+      </div>
+
+      <div class="card">
+        <h3>Beard Trim</h3>
+        <p>Sharp beard shaping and grooming services.</p>
+      </div>
+
+      <div class="card">
+        <h3>Hot Towel Shave</h3>
+        <p>Traditional relaxing shave experience.</p>
+      </div>
+
+      <div class="card">
+        <h3>Kids Cuts</h3>
+        <p>Fresh styles for the young gentlemen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=1200&auto=format&fit=crop" alt="Barber Shop">
+
+      <div>
+        <h3 style="margin-bottom:20px;color:#d4af37;font-size:30px;">
+          The Best Barber Experience
+        </h3>
+
+        <p>
+          At Prime Cuts, we combine old-school barber traditions with modern
+          styling techniques. Our experienced barbers are dedicated to giving
+          every client a clean, confident look.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <p>📍 123 Main Street, Your City</p>
+    <p>📞 (555) 123-4567</p>
+    <p>✉️ bookings@primecuts.com</p>
+
+    <br>
+
+    <a href="mailto:bookings@primecuts.com" class="btn">
+      Email Us
+    </a>
+  </section>
+
+  <footer>
+    <p>© 2026 Prime Cuts Barbershop. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

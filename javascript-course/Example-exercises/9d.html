@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+
+
+  <body>
+    
+    <input type="text" class="js-input" onkeydown="
+     handleOnkey(event)">
+
+    <button class="js-button" onclick="
+     nameSubmit ()">
+      Submit
+    </button>
+
+    <p class="js-para"></p>
+
+  </body>
+
+  <script>
+
+    function handleOnkey (event) {
+      if (event.key === 'Enter') {
+        nameSubmit();
+      }
+
+    }
+    
+    function nameSubmit () {
+     const inputBox = document.querySelector('.js-input');
+     let text = inputBox.value;
+     document.querySelector('.js-para').innerHTML = `Your name is: ${text}`
+
+    }
+  </script>
+
+
+</html>

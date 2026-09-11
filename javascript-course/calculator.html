@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Calculator</title>
+
+    <style>
+
+      .phone-calc {
+        width: 180px;
+        border-color: black;
+        border: solid;
+        border-radius: 10px;
+        background-color: black;
+        padding-left: 5px;
+      }
+
+      .singular-buttons {
+        background-color: rgb(77, 76, 76);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      .operation-buttons{
+        background-color: rgb(28, 218, 28);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      .text {
+        color: white;
+        margin-left: 5px;
+        font-size: 25px;
+        margin: 10px 10px;
+        font-weight: bold;
+        font-family: arial;
+      }
+      
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="phone-calc">
+      
+      <p class="js-calculator text">100</p>
+
+      <p>
+        
+        <button onclick="
+          updateCalculation('1');
+        " class="singular-buttons">1</button>
+
+        <button onclick="
+          updateCalculation('2');
+        " class="singular-buttons">2</button>
+
+        <button onclick="
+          updateCalculation('3');
+        " class="singular-buttons">3</button>
+
+        <button onclick="
+        updateCalculation(' + ');
+        " class="operation-buttons">+</button>
+
+      </p>
+
+      <p>
+        <button onclick="
+          updateCalculation('4');
+        " class="singular-buttons">4</button>
+
+        <button onclick="
+          updateCalculation('5');
+        " class="singular-buttons">5</button>
+
+        <button onclick="
+          updateCalculation('6');
+        " class="singular-buttons">6</button>
+
+        <button onclick="
+          updateCalculation(' - ');
+        " class="operation-buttons">-</button>
+      </p>
+
+      </p>
+
+      <p>
+        <button onclick="
+          updateCalculation('7');
+        " class="singular-buttons">7</button>
+
+        <button onclick="
+          updateCalculation('8');
+        " class="singular-buttons">8</button>
+
+        <button onclick="
+          updateCalculation('9');
+        " class="singular-buttons">9</button>
+
+        <button onclick="
+          updateCalculation(' * ');
+        " class="operation-buttons">*</button>
+      </p>
+
+      <p>
+        <button onclick="
+          updateCalculation('0');
+        " class="singular-buttons">0</button>
+
+        <button onclick="
+          updateCalculation('.');
+        " class="singular-buttons">.</button>
+
+        <button onclick="
+          calculation = eval(calculation);
+
+
+          displayCalculation();
+
+          localStorage.setItem('calculation', calculation);
+        " class="singular-buttons">=</button>
+
+        <button onclick="
+          updateCalculation(' / ');
+        " class="operation-buttons">/</button>
+      </p>
+
+      <p>
+        <button onclick="
+          calculation = '';
+
+
+          displayCalculation();
+          
+          localStorage.setItem('calculation', calculation);
+        " class="singular-buttons">Clear</button>
+      </p>
+    </div>
+
+
+
+
+    
+    <script>
+
+      let calculation = localStorage.getItem('calculation') || '';
+
+      displayCalculation();
+
+      function updateCalculation (value) {
+        calculation += value;
+
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      }
+
+     
+      function displayCalculation () {
+        const displayCalc = document.querySelector('.js-calculator')
+        displayCalc.innerHTML = calculation
+      }
+    </script>
+    
+  </body>
+
+</html> 
